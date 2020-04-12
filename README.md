@@ -1,3 +1,3 @@
-# angular-v1l5y7
+# Angular Web App
 
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/angular-v1l5y7)
+A web app developed using the Typescript language, the Firebase platform, and extending the Android Bloggin App to the web.
