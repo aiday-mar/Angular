@@ -2,5 +2,23 @@
 <body>
 <h1>Blogee</h1>
   
+  <table>
+  <tbody>
+    <!-- iteration over an array in order to show the content -->
+    <tr *ngFor="let post of posts">
+      <table>
+        <!-- curly braces must be for accessing the object's field -->
+        <tr>{{post.timestamp}}</tr>
+        <tr>{{post.location}}</tr>
+        <tr>{{post.title}}</tr>
+        <tr>{{post.desc}}</tr>
+        <tr>
+            <!-- <button (click)="View(post.id)">View</button> -->
+        </tr>
+      </table>
+    </tr>
+  </tbody>
+</table>
+
 </body>
 </html>

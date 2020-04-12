@@ -11,6 +11,7 @@ import {AngularFireModule} from '@angular/fire';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
 import {AngularFireStorageModule} from '@angular/fire/storage';
 import {AngularFireAuthModule} from '@angular/fire/auth';
+import { DisplayPostsHomeServiceService } from './display-posts-home-service.service';
 
 const firebaseConfig = {
   apiKey: "AIzaSyDJhXQWXEymyZO2tySmhqlWQnOhuBVijZ8",
@@ -34,6 +35,7 @@ const firebaseConfig = {
     ],
 
   declarations: [ AppComponent, HelloComponent ],
-  bootstrap:    [ AppComponent ]
+  bootstrap:    [ AppComponent ],
+  providers: [DisplayPostsHomeServiceService]
 })
 export class AppModule { }
