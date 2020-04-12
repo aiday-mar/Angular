@@ -1,6 +1,6 @@
 import { Component, OnInit} from '@angular/core';
 import { DisplayPostsHomeService } from './display-posts-home.service';
-import { Post } from './post.model';
+import { Post } from './Models/post.model';
 
 // https://www.intertech.com/Blog/angular-component-tutorial-inputs-outputs-and-eventemitters/
 

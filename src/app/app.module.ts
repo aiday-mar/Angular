@@ -11,8 +11,14 @@ import {AngularFireModule} from '@angular/fire';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
 import {AngularFireStorageModule} from '@angular/fire/storage';
 import {AngularFireAuthModule} from '@angular/fire/auth';
+
 // when you rename services you need to rename them also in the app module
 import { DisplayPostsHomeService } from './display-posts-home.service';
+
+// for routing
+import { RouterModule, Router } from '@angular/router'
+import { ReactiveFormsModule } from '@angular/forms';
+import { PostdetailsComponent } from './postdetails/postdetails.component'
 
 const firebaseConfig = {
   apiKey: "AIzaSyDJhXQWXEymyZO2tySmhqlWQnOhuBVijZ8",
@@ -30,12 +36,23 @@ const firebaseConfig = {
     BrowserModule, 
     FormsModule,
     AngularFireModule.initializeApp(firebaseConfig),
+
+    // firease imports
     AngularFirestoreModule,
     AngularFireAuthModule,
     AngularFireStorageModule,
+
+    // other imports
+    ReactiveFormsModule,
+    RouterModule.forRoot([
+
+      // default component is the AppComponent
+      { path: '', component: AppComponent },
+      { path: 'post/:postID', component: PostdetailsComponent },
+    ])
     ],
 
-  declarations: [ AppComponent, HelloComponent ],
+  declarations: [ AppComponent, HelloComponent, PostdetailsComponent ],
   bootstrap:    [ AppComponent ],
   providers: [DisplayPostsHomeService]
 })

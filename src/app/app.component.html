@@ -5,7 +5,8 @@
   <table>
   <tbody>
     <!-- iteration over an array in order to show the content -->
-    <tr *ngFor="let post of posts">
+    <!-- this same postID is used in the routing in the app.module -->
+    <tr *ngFor="let post of posts; index as postID">
       <table>
         <!-- curly braces must be for accessing the object's field -->
         <tr>{{post.timestamp}}</tr>
@@ -13,7 +14,7 @@
         <tr>{{post.title}}</tr>
         <tr>{{post.desc}}</tr>
         <tr>
-            <!-- <button (click)="View(post.id)">View</button> -->
+            <a [routerLink]="['/post', postID]">View</a>
         </tr>
       </table>
     </tr>
