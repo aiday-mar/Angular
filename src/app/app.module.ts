@@ -19,6 +19,7 @@ import { DisplayPostsHomeService } from './display-posts-home.service';
 import { RouterModule, Router } from '@angular/router'
 import { ReactiveFormsModule } from '@angular/forms';
 import { PostdetailsComponent } from './postdetails/postdetails.component'
+import { appRoutingModule } from './app.routing';
 
 const firebaseConfig = {
   apiKey: "AIzaSyDJhXQWXEymyZO2tySmhqlWQnOhuBVijZ8",
@@ -44,12 +45,14 @@ const firebaseConfig = {
 
     // other imports
     ReactiveFormsModule,
+    
     RouterModule.forRoot([
 
       // default component is the AppComponent
       { path: '', component: AppComponent },
       { path: 'post/:postID', component: PostdetailsComponent },
     ])
+    
     ],
 
   declarations: [ AppComponent, HelloComponent, PostdetailsComponent ],
