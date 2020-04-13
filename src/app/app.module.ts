@@ -19,7 +19,6 @@ import { DisplayPostsHomeService } from './display-posts-home.service';
 import { RouterModule, Router } from '@angular/router'
 import { ReactiveFormsModule } from '@angular/forms';
 import { PostdetailsComponent } from './postdetails/postdetails.component'
-import { appRoutingModule } from './app.routing';
 
 const firebaseConfig = {
   apiKey: "AIzaSyDJhXQWXEymyZO2tySmhqlWQnOhuBVijZ8",
@@ -49,8 +48,9 @@ const firebaseConfig = {
     RouterModule.forRoot([
 
       // default component is the AppComponent
-      { path: '', component: AppComponent },
-      { path: 'post/:postID', component: PostdetailsComponent },
+      // I removed the below path and now there is no duplicate of the template on the home page
+      // { path: '', component: AppComponent, pathMatch: 'full'},
+      { path: 'post/:id', component: PostdetailsComponent},
     ])
     
     ],

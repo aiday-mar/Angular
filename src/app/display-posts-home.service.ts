@@ -9,5 +9,9 @@ export class DisplayPostsHomeService {
 
   getPosts() {
     return this.firestore.collection('Posts').snapshotChanges();
-}
+  }
+
+  getPost(postID){
+    return this.firestore.collection('Posts').doc(postID).snapshotChanges();
+  }
 }

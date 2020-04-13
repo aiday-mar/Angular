@@ -2,12 +2,12 @@
 <body>
 <h1>Blogee</h1>
 
-<router-outlet>
   <table>
   <tbody>
     <!-- iteration over an array in order to show the content -->
     <!-- this same postID is used in the routing in the app.module -->
-    <tr *ngFor="let post of posts; index as postID">
+    <td>
+    <tr *ngFor="let post of posts">
       <table>
         <!-- curly braces must be for accessing the object's field -->
         <tr>{{post.timestamp}}</tr>
@@ -15,14 +15,20 @@
         <tr>{{post.title}}</tr>
         <tr>{{post.desc}}</tr>
         <tr>
-            <a [routerLink]="['/post', postID]">View</a>
+            <!-- indeed here we send the post.id with the url -->
+            <a [routerLink]="['/post', post.id]">View</a>
         </tr>
       </table>
     </tr>
+    </td>
+
+    <td>
+      <router-outlet>
+      </router-outlet>
+    </td>
+
   </tbody>
 </table>
-
-</router-outlet>
 
 </body>
 </html>
