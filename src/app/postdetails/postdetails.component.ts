@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DisplayPostsHomeService } from '../display-posts-home.service';
 import { Post } from '../Models/post.model';
+import * as firebase from 'firebase';
 
 
 @Component({
@@ -24,13 +25,10 @@ export class PostdetailsComponent implements OnInit {
       this.postID = params.get('id'); 
     });
 
-    this.displayPostsHomeService.getPost(this.postID).subscribe(data => {
-      this.post = data.map(e => {
-        return {
-          id : e.payload.doc.id,
-          ...e.payload.doc.data()
-        } as Post;
-      })
+    this.displayPostsHomeService.getPost(this.postID).subscribe(
+      (documentSnapshot: firebase.firestore.DocumentSnapshot) => {
+        this.post.title = documentSnapshot[7].data();
+        this.post.text = documentSnapshot[5].data();
     });
   }
 

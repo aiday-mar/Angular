@@ -12,6 +12,6 @@ export class DisplayPostsHomeService {
   }
 
   getPost(postID){
-    return this.firestore.collection('Posts').doc(postID).snapshotChanges();
+    return this.firestore.collection('Posts').doc(postID).get();
   }
 }
