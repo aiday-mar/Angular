@@ -27,6 +27,8 @@ import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
 
 // --- 
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
+
 const firebaseConfig = {
   apiKey: "AIzaSyDJhXQWXEymyZO2tySmhqlWQnOhuBVijZ8",
   authDomain: "appdata-67dc1.firebaseapp.com",
@@ -52,6 +54,7 @@ const firebaseConfig = {
     // other imports
     ReactiveFormsModule,
     CommonModule, 
+    MDBBootstrapModule.forRoot(),
 
     RouterModule.forRoot([
 

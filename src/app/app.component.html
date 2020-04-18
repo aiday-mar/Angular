@@ -1,8 +1,32 @@
 <html>
 <body>
-<h1>Blogee</h1>
-<a [routerLink]="['/register']">Sign in </a>
-<a [routerLink]="['/login']">Log in </a>
+  <!--Navbar-->
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark indigo">
+
+  <a class="navbar-brand"> Blogee</a>
+
+  <!-- Collapsible content -->
+  <!-- Links -->
+    <ul>
+      <li>
+        <a color="black" routerLink="/register">Register</a>
+      </li>
+      <li>
+        <a color="black" routerLink="/login">Login</a>
+      </li>
+    </ul>
+    <!-- Links -->
+
+    <!-- Search form -->
+    <form>
+      <div>
+        <input type="text" placeholder="Search">
+      </div>
+    </form>
+  <!-- Collapsible content -->
+
+</mdb-navbar>
+<!--/.Navbar-->
 
 <table>
   <tbody>
