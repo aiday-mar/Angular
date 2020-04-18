@@ -16,10 +16,16 @@ import {AngularFireAuthModule} from '@angular/fire/auth';
 import { DisplayPostsHomeService } from './display-posts-home.service';
 
 // for routing
-import { RouterModule, Router } from '@angular/router'
+import { RouterModule, Router } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
-import { PostdetailsComponent } from './postdetails/postdetails.component'
+import { PostdetailsComponent } from './postdetails/postdetails.component';
+import { RegisterComponent } from './register/register.component';
 
+// FOR REGISTER
+import { CommonModule } from '@angular/common';
+import { LoginComponent } from './login/login.component';
+
+// --- 
 const firebaseConfig = {
   apiKey: "AIzaSyDJhXQWXEymyZO2tySmhqlWQnOhuBVijZ8",
   authDomain: "appdata-67dc1.firebaseapp.com",
@@ -44,18 +50,21 @@ const firebaseConfig = {
 
     // other imports
     ReactiveFormsModule,
-    
+    CommonModule, 
+
     RouterModule.forRoot([
 
       // default component is the AppComponent
       // I removed the below path and now there is no duplicate of the template on the home page
       // { path: '', component: AppComponent, pathMatch: 'full'},
       { path: 'post/:id', component: PostdetailsComponent},
+      { path: 'register', component: RegisterComponent},
+      { path: 'login', component: LoginComponent}
     ])
     
     ],
 
-  declarations: [ AppComponent, HelloComponent, PostdetailsComponent ],
+  declarations: [ AppComponent, HelloComponent, PostdetailsComponent, RegisterComponent, LoginComponent ],
   bootstrap:    [ AppComponent ],
   providers: [DisplayPostsHomeService]
 })
